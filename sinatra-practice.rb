@@ -23,12 +23,9 @@ post '/atm' do
   if plus_minus == "plus" && plus_minus_number >= 0
     session[:amount] = session[:amount] + plus_minus_number
   
-  elsif plus_minus == "minus" && plus_minus_number >= 0 && session[:amount] >= plus_minus_number
+  else plus_minus == "minus" && plus_minus_number >= 0 && session[:amount] >= plus_minus_number
     session[:amount] = session[:amount] - plus_minus_number
-  else plus_minus_number < 0
-  
   end
-
 
   redirect "/atm"
 end
