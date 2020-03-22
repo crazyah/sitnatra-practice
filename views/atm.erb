@@ -1,0 +1,14 @@
+<div style="display:flex; flex-direction:column; align-items:center; background-color:#eee; box-sizing:border-box; padding:50px 0;">
+  <h2>歡迎來到ATM存款頁面</h2>
+  <div>現在存款為
+    <%= session[:amount] %> 元</div>
+  <form action="/atm" method="post">
+    <select name="plus_minus">
+  <option value="plus"> + </option>
+  <option value="minus"> - </option>
+</select>
+    <input type="number" name="plus_minus_number">
+    <input type="submit" value="送出">
+  </form>
+  <a href="/clear" style="text-decoration: none;">歸零</a>
+</div>
